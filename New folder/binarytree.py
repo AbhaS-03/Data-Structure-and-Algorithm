@@ -19,7 +19,7 @@ class BST:
                         return
                     else:
                         temp=temp.left
-                else:
+                else: #right subtree
                       if temp.right is None:
                         temp.right = new_node
                         return
@@ -32,7 +32,21 @@ class BST:
             self.inorder(rt.left)
             print(rt.data,end=" ")
             self.inorder(rt.right)
-            
+    def preorder(self,rt):
+    
+        if rt is None:
+             return
+        else:
+            print(rt.data,end= " ")
+            self.preorder(rt.left)
+            self.preorder(rt.right)
+    def postorder(self,rt):
+        if rt is None:
+            return
+        else:
+             print(rt.data,end=" ")
+             self.postorder(rt.left)
+             self.postorder(rt.right)
 
 b1 =BST()
 b1.insert(Node(100))
@@ -41,4 +55,9 @@ b1.insert(Node(450))
 b1.insert(Node(0))
 b1.insert(Node(65))
 b1.insert(Node(300))
+print("Inorder")
 b1.inorder(b1.root)
+print("\n Preorder")
+b1.preorder(b1.root)
+print("\n Postorder")
+b1.postorder(b1.root)

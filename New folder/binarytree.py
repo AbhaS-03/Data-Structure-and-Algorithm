@@ -47,7 +47,16 @@ class BST:
              print(rt.data,end=" ")
              self.postorder(rt.left)
              self.postorder(rt.right)
-
+    def findmin(self,rt):
+        temp = rt
+        while temp.left:
+            temp=temp.left
+        print("\n Min :",temp.data)
+    def findmax(self,rt):
+        temp =rt
+        while temp.right:
+            temp=temp.right
+        print("Max :", temp.data)
 b1 =BST()
 b1.insert(Node(100))
 b1.insert(Node(10))
@@ -61,3 +70,5 @@ print("\n Preorder")
 b1.preorder(b1.root)
 print("\n Postorder")
 b1.postorder(b1.root)
+b1.findmin(b1.root)
+b1.findmax(b1.root)
